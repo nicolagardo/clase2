@@ -1,10 +1,24 @@
-import React from 'react'
-import {View, Text} from 'react-native'
+import React from 'react';
+import {View, Text, Button} from 'react-native';
 
-export default function SecondScreen() {
-    return (
-        <View>
-      <Text style={{marginTop: 150, fontSize: 30}}>Second Home</Text>
-        </View>
-    )
+export default function SecondScreen({navigation}) {
+  goHome = () => {
+    console.log('Test');
+    navigation.navigate('HomeScreen');
+  };
+  TerceraScreen = () => {
+    //console.log('Test')
+    navigation.navigate('ThirdScreen');
+  };
+  return (
+    <View>
+      <Button title="Volver al Home" onPress={() => goHome()} />
+
+      <Text style={{marginTop: 150, fontSize: 30, textAlign: 'center'}}>
+        Second Home
+      </Text>
+      
+      <Button title="Tercera Pagina " onPress={() => TerceraScreen()} />
+    </View>
+  );
 }
